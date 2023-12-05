@@ -17,28 +17,26 @@ function concat() {
 	const fruits = ["Banana", "Orange", "Apple", "Mango"];
 	const names = ["John", "Mary", "Ivan"];
 	const joinedArray = fruits.concat(names);
-	console.log("1 - Merges two or more arrays: " + joinedArray);
+	console.log(joinedArray);
 	// 2 this method does not change initial array
-	console.log("2 - Initial arrays were not changed: " + fruits + " " + "names");
 	// 3 merges strings and numbers
 	const arr1 = [1, 2, 3, 4];
 	const arr2 = ["Cecile", "Leone"];
 	const arr3 = arr1.concat(arr2);
-	console.log("3 - Merges string and numbers: " + arr3);
+	console.log(arr3);
 	// 4 merges nested arrays
 	const arr4 = [1, 2, [3, 4]];
 	const arr5 = [[5, 6], 7, 8];
-	const arr6 = arr4.concat(arr5);
-	console.log("4 - Merges nested arrays:" + arr6);
+	const arr6 = arr4.concat(arr5); //?
+	console.log(arr6);
 	// 5 acts like push method i.e appends any values to the end
 	const arr7 = fruits.concat(1, 2, "anyvalue");
-	console.log(
-		`5 - Acts like push method i.e appends any values to the end: ${arr7} `
-	);
+	console.log(`${arr7} `);
 	// 6 creates copy of an array if no argument provided
 	const arr8 = fruits.concat();
-	console.log(`6 - Creates copy of an array if no argument provided: ${arr8}`);
+	console.log(`${arr8}`);
 }
+concat();
 
 //  constructor property returns the function that crated the Array prototype
 function constructor() {
