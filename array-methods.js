@@ -301,6 +301,7 @@ function indexOf() {
 	let index3 = fruits.indexOf("Apple", -1);
 	console.log(index3);
 }
+
 // isArray() method returns true if an object is an array, otherwise false
 //  it can only be used as Array.isArray().
 // Using x.isArray(), where x is an array will return false
