@@ -389,6 +389,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "math-methods.js",
+			"bookmarks": [
+				{
+					"line": 3,
+					"column": 16,
+					"label": ""
+				}
+			]
 		}
 	]
 }
