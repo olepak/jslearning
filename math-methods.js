@@ -24,3 +24,16 @@ console.log(Math.cbrt(64));
 console.log(Math.ceil(7));
 console.log(Math.ceil(7.003));
 console.log(Math.ceil(-7.4));
+
+// Math.floor() rounds down and return the largest integer less that or equal to a given number
+console.log(Math.floor(5.95));
+console.log(Math.floor(-5.95));
+
+// Math.max() returns the largest on=f the numbers given as input parameters, or Infinity when there is no parameters
+console.log(Math.max(1, 67, 3, 186));
+const maxArray = [12, 354, 5, 45, 643, 5, 15, 4];
+console.log(Math.max(...maxArray));
+
+// Math.min() returns the smallest of the numbers given as input parameters, or Infinity if there are no parameters
+const minArray = [12, 354, 5, 45, 643, 5, 15, 4];
+console.log(Math.min(...minArray));
