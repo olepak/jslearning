@@ -60,3 +60,9 @@ console.log(Math.round(5.51));
 console.log(Math.sign(3));
 console.log(Math.sign(-3));
 console.log(Math.sign(0));
+
+// Math.sqrt() returns the square root of a number
+let squareRoot = Math.sqrt(9);
+
+// Math.trunc returns the integer part of a number by removing any fractional digits
+let trunc = Math.trunc(12.99);
