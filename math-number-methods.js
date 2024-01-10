@@ -66,3 +66,23 @@ let squareRoot = Math.sqrt(9);
 
 // Math.trunc returns the integer part of a number by removing any fractional digits
 let trunc = Math.trunc(12.99);
+
+// Number object https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+// Number.isFinite() method determines whether the passed value is a finite number - that is, it checks
+// that a given value is a number, and the number is neither positive Infinity, negative Infinity, nor NaN
+console.log(Number.isFinite(1 / 0));
+console.log(Number.isFinite(10 / 5));
+console.log(Number.isFinite("df"));
+
+// Number.isInteger() static method determines whether the passed value is an integer or not
+console.log(Number.isInteger(10));
+console.log(Number.isInteger(5.2));
+console.log(Number.isInteger(NaN));
+
+// Number() constructor creates Number object. When called as a function, it returns primitive values of type Number
+// You should rarely find yourself using Number as a constructor
+const aN = new Number("123"); // a === 123 is false
+const bN = Number("123"); /// bN === 123 is true
+console.log(typeof aN);
+console.log(typeof bN);
