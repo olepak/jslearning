@@ -86,3 +86,26 @@ const aN = new Number("123"); // a === 123 is false
 const bN = Number("123"); /// bN === 123 is true
 console.log(typeof aN);
 console.log(typeof bN);
+
+// Number.isNaN determines whether the passed value is the number value NaN, and returns false if the input
+// is not of the Number type. It is a more robust  version of the original global isNaN() function.
+console.log(Number.isNaN(1));
+function typeOfNaN(x) {
+	if (Number.isNaN(x)) {
+		return "Number NaN";
+	}
+	if (isNaN(x)) {
+		return "NaN";
+	}
+}
+console.log(typeOfNaN("100f"));
+console.log(typeOfNaN(NaN));
+// Number.isNaN() and isNaN() behaves differently. Number.isNaN does not force-convert the parameter to a number.
+// Where as isNaN() coerces its parameter to a number, and than it failed it gives true.
+console.log(isNaN("100f"));
+console.log(Number.isNaN("100f"));
+// Number.isNaN() provide a convenient way to check for equality with NaN. You cannot test for
+// equality with NaN using either the == or === operators, because unlike all other value comparisons in JavaScript, these evaluate to false whenever one operand is NaN, even if the operand is also NaN.
+// Since x !== x is only true for NaN among all possible JavaScript values, Number.isNaN(x) can also be replaced
+// with a test for x !== x, despite the latter being less readable.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
