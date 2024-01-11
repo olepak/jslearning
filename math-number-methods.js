@@ -109,3 +109,33 @@ console.log(Number.isNaN("100f"));
 // Since x !== x is only true for NaN among all possible JavaScript values, Number.isNaN(x) can also be replaced
 // with a test for x !== x, despite the latter being less readable.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+
+// Number.parseFloat() parses an argument and returns a floating point number. If a number cannot be parsed from an argument, it returns NaN
+function circumference(r) {
+	if (Number.isNaN(Number.parseFloat(r))) {
+		return 0;
+	}
+	return Number.parseFloat(r) * 2 * Math.PI;
+}
+circumference("1.434f");
+circumference("234");
+// return value - a floating point number parsed from the given string.
+// or NaN when the first non-whitespace character cannot be converted to a number
+// This method has the same functionality as the global parseFloat() function
+
+// Number.parseInt() parses a string argument and returns an integer of the specified radix or base.
+function roughScale(x, base) {
+	const parsed = Number.parseInt(x, base);
+	if (Number.isNaN(parsed)) {
+		return 0;
+	}
+	return parsed * 100;
+}
+roughScale("0xF", 16);
+roughScale("321", 2);
+// Number.parseInt(string, radix)
+// string - the value to parse, coerced to a string.
+// radix - an integer between 2 and 36 that represents radix(the base in mathematical numeral systems) of the string
+// if radix is undefined or 0, it is assumed to be 10 except when the number begins with the code unit pairs 0x or OX, in which case a radix if 16 is assumed.
+// return value - an integer parsed from the given string. if the radix is smaller than 36, or the first non-whitespace character cannot me converted to a number, NaN is returned.
+// it has the same functionality as the global parseInt() function.
