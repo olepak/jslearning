@@ -71,3 +71,22 @@ div.textContent = "Hello world"; // creates a next node containing "Hello world"
 
 // ADDING HTML CONTENT
 div.innerHTML = "<span>Hello World!</span>"; // renders HTML inside div
+
+// ADD EVENTS https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events#events
+const btn = document.querySelector("#btn"); // selection by id
+btn.addEventListener("click", () => {
+	alert("Hello world");
+});
+// it also can be used with a named function
+function alertFunction() {
+	alert("Yay! You did it!");
+}
+btn.addEventListener("click", alertFunction);
+// using named functions can clean up the code considerably. And it is a good idea if you
+// want to use it in multiple places
+
+// EVENTS WITH PARAMETERS
+btn.addEventListener("click", function (e) {
+	console.log(e);
+});
+// the e in that function is an object that references event itself
