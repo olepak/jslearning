@@ -117,3 +117,27 @@ buttons.forEach((button) => {
 		alert(button.id);
 	});
 });
+
+// NODE TYPES https://www.javascripttutorial.net/javascript-dom/document-object-model-in-javascript/
+Node.ELEMENT_NODE; // value = 1 An element node like <p> or <div>
+Node.TEXT_NODE; // value = 3 The actual Text inside an Element or Attr.
+Node.CDATA_SECTION_NODE; // value = 4 A CDATA Section, such as <!CDATA [[...]]>
+Node.PROCESSING_INSTRUCTION_NODE; // value = 7 A ProcessingInstruction of an XML document, such as <?xml-stylesheet...?>
+Node.COMMENT_NODE; // value = 8
+Node.DOCUMENT_NODE; // value = 9 A Document node.
+Node.DOCUMENT_TYPE_NODE; // value = 10 A Document type node , such as <!Doctype html>
+Node.DOCUMENT_FRAGMENT_NODE; // value = 11 A DocumentFragment node.
+// get type of node
+node.nodeType;
+// compare the nodeType property with the constants to determine the node type
+if (node.nodeType === Node.ELEMENT_NODE) {
+	// node is the element node
+}
+// A node has two properties: nodeName and nodeValue. Their values depend on the node type.
+// For example node of type Element has the nodeName the same as the elements's tag name,
+// and nodeValue is always null. It is better to test node type before using these properties.
+if (node.nodeType == Node.ELEMENT_NODE) {
+	let name = node.nodeName; // tag name like <p>
+}
+// Note that getElementById() and querySelector() returns an object with the Element type while
+// getElementsByTagName() or querySelectorAll() returns NodeList which is a collection of nodes
