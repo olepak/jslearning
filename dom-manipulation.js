@@ -89,4 +89,31 @@ btn.addEventListener("click", alertFunction);
 btn.addEventListener("click", function (e) {
 	console.log(e);
 });
-// the e in that function is an object that references event itself
+// the e in that function is an object that references event itself.With that object
+// you have the access to many useful properties and methods ( functions that lives inside an object)
+// such as which mouse button or key was pressed, or information about the events's target - the DOM
+// node that was clicked
+btn.addEventListener("click", function (e) {
+	console.log(e.target);
+});
+
+btn.addEventListener("click", function (e) {
+	e.target.style.background = "blue";
+});
+
+// ATTACHING LISTENERS TO GROUPS OF NODES
+// let's have a container of buttons in HTML
+<div id="container">
+	<button id="1">Click me</button>
+	<button id="2">Click me</button>
+	<button id="3">Click me</button>
+</div>;
+// buttons is a node list. it looks and acts much like an array
+const buttons = document.querySelectorAll("button");
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+	// and for each one we add a click listener
+	button.addEventListener("click", () => {
+		alert(button.id);
+	});
+});
