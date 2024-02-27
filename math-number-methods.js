@@ -139,3 +139,22 @@ roughScale("321", 2);
 // if radix is undefined or 0, it is assumed to be 10 except when the number begins with the code unit pairs 0x or OX, in which case a radix if 16 is assumed.
 // return value - an integer parsed from the given string. if the radix is smaller than 36, or the first non-whitespace character cannot me converted to a number, NaN is returned.
 // it has the same functionality as the global parseInt() function.
+
+// Number.toExponential() method of Number values returns a string representing this number in exponential notation
+function expo(x, f) {
+	return Number.parseFloat(x).toExponential(f);
+}
+expo(12345, 2);
+
+// Number.toFixed() method formats this number using fixed-point-notation
+function financial(x) {
+	return Number.parseFloat(x).toFixed(2);
+}
+financial("12345");
+
+//Number.toPrecision() method returns a string representing this number to the specified precision
+function precise(x) {
+	return x.toPrecision(4);
+}
+precise(123.456);
+precise(0.0004);
