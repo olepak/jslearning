@@ -141,3 +141,14 @@ if (node.nodeType == Node.ELEMENT_NODE) {
 }
 // Note that getElementById() and querySelector() returns an object with the Element type while
 // getElementsByTagName() or querySelectorAll() returns NodeList which is a collection of nodes
+
+// getElementById   https://www.javascripttutorial.net/javascript-dom/javascript-getelementbyid/
+// The document.getElementById("id") returns a DOM element specified by an id of null if no matching
+// element found.
+// If multiple elements have the same id, even though it is invalid, the getElementById() returns the first element it encounters
+document.getElementById("id");
+
+// getElementsByName https://www.javascripttutorial.net/javascript-dom/javascript-getelementsbyname/
+// returns a live NodeList of elements with a specified name
+// The NodeList is an array-like object, not an array object
+document.getElementsByName("name");
