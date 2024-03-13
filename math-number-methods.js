@@ -158,3 +158,13 @@ function precise(x) {
 }
 precise(123.456);
 precise(0.0004);
+
+// Number.toString() returns a string representing this number value
+function hexColor(c) {
+	if (c < 256) {
+		return Math.abs(c).toString(16);
+	}
+	return 0;
+}
+hexColor(246);
+// toString(radix) radix - is an integer in the range 2 through 36 specifying the base to use for representing the number value. Defaults to
