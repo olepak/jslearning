@@ -142,6 +142,12 @@ function fill() {
 //  filter() method creates a new array filled with elements that pass a test provided by a function
 // the filter() method does not execute the function for empty elements
 // the filter() method does not change the original array
+// array.filter(function(currentValue, index, arr),thisValue)
+// function() - required. A function to run for each array element.
+// currentValue - required. The value of the current element
+// index - Optional. the index of the current element
+// arr - Optional. The array of the current element
+// thisValue -Optional. Default undefined. A value passed to the function as its this value
 function filter() {
 	// return an array of all values in ages[] that are over 18:
 	const numbers = [775, 7, 985, 6, 9485, 11, 12, 85905, 47];
