@@ -152,3 +152,18 @@ document.getElementById("id");
 // returns a live NodeList of elements with a specified name
 // The NodeList is an array-like object, not an array object
 document.getElementsByName("name");
+
+// getElementsByTagName() https://www.javascripttutorial.net/javascript-dom/javascript-getelementsbytagname/
+let elements = document.getElementsByTagName("tagName");
+// it is a method of the document or element object
+// it accepts a tag name and returns a list of elements with the matching tag name
+// it returns a live HTMLCollection of elements. The HTMLCollection is an array-like object
+
+//getElementsByClassName() https://www.javascripttutorial.net/javascript-dom/javascript-getelementsbyclassname/
+// it returns an array-like of objects of the child elements with a specified class name. It available on the document element or any other elements.
+// when calling the method on the document element, it searches the entire document and returns the child elements of the document
+let elementsClass = document.getElementsByClassName(names);
+// however, when calling the method on a specific element, it returns the descendants of that specific element with the given class name
+let elementsClass2 = rootElement.getElementsByClassName(names);
+// the names parameter is a string which represent one or more class names to match; to use multiple class names,
+// separate them by space
