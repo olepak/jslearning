@@ -178,3 +178,18 @@ let elementSelector = document.querySelector("selector");
 // To convert the NodeList to an array use the Array.from() method:
 let nodelist = document.document.querySelectorAll("selector");
 let elementsFromNodeList = Array.from(nodeList);
+// Universal selector "*" matches all elements of any type
+let elementUniversal = document.querySelector("*"); // selects the first element in the document
+let elementUniversalAll = document.querySelectorAll("*"); // selects all elements in the document
+// Type selector selects element by node name e.g "a" selects all <a> elements
+let firstHeading = document.querySelector("h1"); // selects the first h1 element in the document
+let heading2 = document.querySelectorAll("h2"); // selects all h2 elements
+// Class selector finds the element with a given CSS class name, e.g. ".className"
+let note = document.querySelector(".menu-item"); // finds the first element with the menu-item class
+let notes = document.querySelectorAll(".menu-item"); // finds all elements with the menu-item class
+// ID selector select an element based on the value of its id, e.g. "#id"
+let logo = document.querySelector("#logo"); // finds the first element with the id #logo
+// since the id should be unique in the document, the querySelectorAll is not relevant
+// Attribute selector selects elements that have a given attribute, e.g "[attribute]"
+let autoplay = document.querySelector("[autoplay]"); // finds the first element with the attribute [autoplay]
+let autoplays = document.querySelector("[autoplay]"); // finds all elements that have [autoplay] attribute
