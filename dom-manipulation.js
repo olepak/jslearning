@@ -167,3 +167,14 @@ let elementsClass = document.getElementsByClassName(names);
 let elementsClass2 = rootElement.getElementsByClassName(names);
 // the names parameter is a string which represent one or more class names to match; to use multiple class names,
 // separate them by space
+
+// querySelector https://www.javascripttutorial.net/javascript-dom/javascript-queryselector/
+let elementSelector = document.querySelector("selector");
+// "selector" - is a CSS selector or a group of CSS selectors to match the descendant elements of the parentNode
+// returns null of no element matches
+// querySelectorAll() method returns a static NodeList of elements that match the CSS selector.
+// If no element matches, it returns an empty NodeList.
+// NodeList is is an array-like object, not an array object. However in modern browsers you can use the forEach() or the for...of loop.
+// To convert the NodeList to an array use the Array.from() method:
+let nodelist = document.document.querySelectorAll("selector");
+let elementsFromNodeList = Array.from(nodeList);
