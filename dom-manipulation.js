@@ -175,21 +175,57 @@ let elementSelector = document.querySelector("selector");
 // querySelectorAll() method returns a static NodeList of elements that match the CSS selector.
 // If no element matches, it returns an empty NodeList.
 // NodeList is is an array-like object, not an array object. However in modern browsers you can use the forEach() or the for...of loop.
+
 // To convert the NodeList to an array use the Array.from() method:
 let nodelist = document.document.querySelectorAll("selector");
 let elementsFromNodeList = Array.from(nodeList);
+
 // Universal selector "*" matches all elements of any type
 let elementUniversal = document.querySelector("*"); // selects the first element in the document
 let elementUniversalAll = document.querySelectorAll("*"); // selects all elements in the document
+
 // Type selector selects element by node name e.g "a" selects all <a> elements
 let firstHeading = document.querySelector("h1"); // selects the first h1 element in the document
 let heading2 = document.querySelectorAll("h2"); // selects all h2 elements
+
 // Class selector finds the element with a given CSS class name, e.g. ".className"
 let note = document.querySelector(".menu-item"); // finds the first element with the menu-item class
 let notes = document.querySelectorAll(".menu-item"); // finds all elements with the menu-item class
+
 // ID selector select an element based on the value of its id, e.g. "#id"
 let logo = document.querySelector("#logo"); // finds the first element with the id #logo
 // since the id should be unique in the document, the querySelectorAll is not relevant
+
 // Attribute selector selects elements that have a given attribute, e.g "[attribute]"
 let autoplay = document.querySelector("[autoplay]"); // finds the first element with the attribute [autoplay]
 let autoplays = document.querySelector("[autoplay]"); // finds all elements that have [autoplay] attribute
+
+// Grouping selectors group multiple selectors
+let elementsGroup = document.querySelectorAll("div, p"); // match any element with one of the selectors in the group
+
+// Combinators
+// Descendant combinator uses the space ( ) to find descendant of a node
+// selector selector
+let links = document.querySelector("p a"); // matches all <a> elements inside the p element
+
+// Child combinator > finds all elements that are direct children of the first element
+// selector > selector
+let listItems = document.querySelectorAll("ul > li"); // finds all li elements tha are directly inside a ul element
+let listItemsClass = document.querySelectorAll("ul.nav > li"); // finds all elements that are directly inside a ul element with class nav
+
+// General sibling combinator ~ selects siblings that share the same parent
+// selector ~ selector
+let linksSibling = document.querySelectorAll("p ~ a"); // finds all elements that follow the p element , immediately or not
+
+// Adjacent sibling combinator + selects adjacent siblings
+// selector + selector
+let linksAdjacent = document.querySelectorAll("h1 + a"); // matches all elements that directly follow an h1
+let linkAdjacent = document.querySelector("h1 + a"); // selects the first a that follows an h1
+
+// Pseudo
+// Pseudo-class : matches elements based on their states
+// element:state
+let listItemPseudo = document.querySelectorAll("li:nth-child(2)"); // selects the second element in a list
+
+//Pseudo-elements :: represent entities that are not included in the document
+let linksPseudoElement = document.querySelector("p::first-line"); // matches the first line of all p elements
