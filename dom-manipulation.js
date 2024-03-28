@@ -229,3 +229,10 @@ let listItemPseudo = document.querySelectorAll("li:nth-child(2)"); // selects th
 
 //Pseudo-elements :: represent entities that are not included in the document
 let linksPseudoElement = document.querySelector("p::first-line"); // matches the first line of all p elements
+
+// JavaScript Events https://www.javascripttutorial.net/javascript-dom/javascript-events/
+// It is an action that occurs in the web browser e.g. mouse click
+// Event Flow has two main models: event bubbling and event capturing
+
+// Event bubbling - an event starts at the most specific element and then flows upward toward the least specific element  ( the document or even window).
+// The click event first occurs on the button which is the element that was clicked. Then the click event goes up the DOM tree, firing on each node along its way until it reaches the document object.
