@@ -234,5 +234,11 @@ let linksPseudoElement = document.querySelector("p::first-line"); // matches the
 // It is an action that occurs in the web browser e.g. mouse click
 // Event Flow has two main models: event bubbling and event capturing
 
+// Event flow
 // Event bubbling - an event starts at the most specific element and then flows upward toward the least specific element  ( the document or even window).
 // The click event first occurs on the button which is the element that was clicked. Then the click event goes up the DOM tree, firing on each node along its way until it reaches the document object.
+// Event capturing - an event starts at the leas specific element and flows downward toward the most specific element
+// DOM Level 2 Event flow specify that event flow has three phases:
+// - first, event capturing occurs, which provides the opportunity to intercept the event
+// - then, the actual target receives the event
+// - finally, event bubbling occurs, which allows a final response to the event
