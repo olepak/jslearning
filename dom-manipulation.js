@@ -242,3 +242,13 @@ let linksPseudoElement = document.querySelector("p::first-line"); // matches the
 // - first, event capturing occurs, which provides the opportunity to intercept the event
 // - then, the actual target receives the event
 // - finally, event bubbling occurs, which allows a final response to the event
+
+// Event object
+// When the event occurs, the web browser passes an Event object to the event handler
+let btn2 = document.querySelector("#btn");
+btn2.addEventListener("click", (event) => {
+	console.log(event.type);
+}); // Output: "click"
+// Event object has a lot of properties. Event object is accessible inside the event handler.Once the event handler have been executed, the event object is automatically destroyed.
+// preventDefault() - prevents default behavior of an event. It does not stop the event from bubbling up the DOM
+// stopPropagation() - immediately stops the flow of an event through the DOM tree. it does not stop the browsers default behavior
