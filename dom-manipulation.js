@@ -252,3 +252,47 @@ btn2.addEventListener("click", (event) => {
 // Event object has a lot of properties. Event object is accessible inside the event handler.Once the event handler have been executed, the event object is automatically destroyed.
 // preventDefault() - prevents default behavior of an event. It does not stop the event from bubbling up the DOM
 // stopPropagation() - immediately stops the flow of an event through the DOM tree. it does not stop the browsers default behavior
+
+// Handling Events in JavaScript https://www.javascripttutorial.net/javascript-dom/handling-events-in-javascript/
+// There are three ways to assign event handlers:
+
+// 1) HTML event handler attributes typically have names that begin with on (e.g. "onclick")
+// <input type="button" value="Save" onclick="alert("Clicked!")"
+// Assigning event handlers using HTML attributes is considered a bad practice and should be avoided as much as possible
+
+// 2) DOM Level 0 event handlers
+//  Each element has event handler properties such as onclick.
+let btn3 = document.querySelector("#btn");
+btn3.onclick = function () {
+	alert("Clicked!");
+}; // in this case the anonymous function becomes the method of the button element
+// by using the this value inside the event handler, you can access the element's properties and methods
+btn3.onclick = function () {
+	alert(this.id); // output "btn"
+};
+// to remove the vent handler, you set the value of the event handler property to null
+btn3.onclick = null;
+
+// 3) DOM level 2 event handlers provide two main methods for dealing with the registering/deregistering event listeners:
+addEventListener(); // register an event handler
+removeEventListener(); // remove an event handler
+// The addEventListener() method accepts three arguments: an event name, an event handler function, and a Boolean value that instructs the method to call the event handler during the capture phase (true) or during the bubble phase (false)
+let btn4 = document.querySelector("#btn");
+btn4.addEventListener("click", function (event) {
+	alert(event.type);
+}); // click
+// It is possible to add multiple event handlers to handle a single event
+// The removeEventListener() removes an event listener that was added via the addEventListener(). However, you need to pass the same arguments as were passed to the addEventListener()
+let btn5 = document.querySelector("#btn");
+let showAlert = function () {
+	alert("clicked");
+};
+btn5.addEventListener("click", showAlert); // add the event listener
+btn5.removeEventListener("click", showAlert); // remove event listener
+// Using an anonymous event listener ae the following will not work
+btn5.addEventListener("click", function () {
+	alert("clicked");
+});
+btn5.removeEventListener("click", function () {
+	alert("clicked");
+}); // will not work
