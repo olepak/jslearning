@@ -296,3 +296,25 @@ btn5.addEventListener("click", function () {
 btn5.removeEventListener("click", function () {
 	alert("clicked");
 }); // will not work
+
+// Page Load Events https://www.javascripttutorial.net/javascript-dom/javascript-page-load-events/
+// When you open a page, the following events occur in sequence:
+
+// DOMContentLoaded - the browser fully loaded HTML and completed building the DOM tree. It hasn't loaded external resources like stylesheets and images. In this event you can start selecting DOM nodes or initialize the interface
+document.addEventListener("DOMContentLoaded", () => {
+	//handle DOMContentLoaded event
+});
+// Only handle DOMContentLoaded event if you place the JavaScript in the head, which references elements in the body section
+
+// load - the browser fully loaded the HTML and also external resources like images and stylesheets
+document.addEventListener("load", () => {
+	//handle load event
+});
+// or use the onload property of the window object:
+window.onload = (event) => {
+	console.log("The page has fully loaded");
+};
+// for legacy system, you may find that the load event is registered in the body element of the HTML document
+<body onload="console.log('Loaded')"></body>;
+// it is a good practice to use the addEventListener() method.
+// the <img> and <script> elements also support the load event.
