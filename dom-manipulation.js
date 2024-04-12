@@ -300,13 +300,13 @@ btn5.removeEventListener("click", function () {
 // Page Load Events https://www.javascripttutorial.net/javascript-dom/javascript-page-load-events/
 // When you open a page, the following events occur in sequence:
 
-// DOMContentLoaded - the browser fully loaded HTML and completed building the DOM tree. It hasn't loaded external resources like stylesheets and images. In this event you can start selecting DOM nodes or initialize the interface
+// ---- DOMContentLoaded - the browser fully loaded HTML and completed building the DOM tree. It hasn't loaded external resources like stylesheets and images. In this event you can start selecting DOM nodes or initialize the interface
 document.addEventListener("DOMContentLoaded", () => {
 	//handle DOMContentLoaded event
 });
 // Only handle DOMContentLoaded event if you place the JavaScript in the head, which references elements in the body section
 
-// load - the browser fully loaded the HTML and also external resources like images and stylesheets
+// ---- load - the browser fully loaded the HTML and also external resources like images and stylesheets
 document.addEventListener("load", () => {
 	//handle load event
 });
@@ -318,3 +318,16 @@ window.onload = (event) => {
 <body onload="console.log('Loaded')"></body>;
 // it is a good practice to use the addEventListener() method.
 // the <img> and <script> elements also support the load event.
+
+// ---- beforeunload fires before the webpage and its resources are unloaded. At this time, the webpage is still visible and you have the opportunity to cancel the event
+window.addEventListener("beforeunload", (event) => {
+	// do something here
+});
+// since the window is the global object, you can omit it like this:
+addEventListener("beforeunload", (event) => {
+	// do something here
+});
+// it triggers a confirmation dialogue to confirm if you really want to leave the page. If confirmed, you will be navigated to the new page. Otherwise, it cancels navigation
+// you need to call the preventDefault() method inside the beforeunload event handler to show the confirmation dialogue. Not all browsers support this. A custom message is not supported.
+// Calls to alert(), confirm(), and prompt() are ignored in the beforeunload handler
+// Use beforeunload to confirm if users really want to leave the page to prevent data loss.
