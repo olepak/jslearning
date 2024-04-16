@@ -331,3 +331,19 @@ addEventListener("beforeunload", (event) => {
 // you need to call the preventDefault() method inside the beforeunload event handler to show the confirmation dialogue. Not all browsers support this. A custom message is not supported.
 // Calls to alert(), confirm(), and prompt() are ignored in the beforeunload handler
 // Use beforeunload to confirm if users really want to leave the page to prevent data loss.
+
+// ---- unload fires when a document completely unloaded. In practice do not use unload event
+
+// Mouse Events. https://www.javascripttutorial.net/javascript-dom/javascript-mouse-events/
+// DOM Level 3 events define nine mouse events
+// mousedown - press the mouse button on the element
+// mouseup - release the mouse button on the element
+// click - one mousedown and one mouseup detected on the element
+// dblclick - double click over an element. In practice you rarely use it.
+// mousemove - it fires repeatedly when you move the cursor around an element. You only register it when you need it and immediately remove it otherwise it will fire repeatedly slowing down the page.
+element.onmousemove = mouseMoveEventHandler;
+element.onmousemove = null;
+// mouseover - fires when the mouse cursor is outside of the element and then move to inside the boundaries of the element
+// mouseout - the mouse cursor is over an element and then moves another element
+// mouseenter - the mouse cursor is outside of an element and then moves to inside the boundaries of the element
+// mouseleave - the mouse cursor is over an element and then moves to the outside of the element's boundaries
