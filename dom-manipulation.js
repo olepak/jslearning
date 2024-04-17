@@ -347,3 +347,18 @@ element.onmousemove = null;
 // mouseout - the mouse cursor is over an element and then moves another element
 // mouseenter - the mouse cursor is outside of an element and then moves to inside the boundaries of the element
 // mouseleave - the mouse cursor is over an element and then moves to the outside of the element's boundaries
+
+// Register mouse event:
+<button id="btn">Click me!</button>;
+let btnMouseEvent = document.querySelector("#btn");
+btnMouseEvent.addEventListener("click", (event) => {
+	console.log("clicked");
+});
+// or you can assign event handler to the element's property:
+btnMouseEvent.onclick = (event) => {
+	console.log("clicked");
+};
+// in legacy systems it can be found in the HTML attribute of the element
+<button id="btn" onclick="console.log('clicked')"></button>;
+
+// Detecting mouse buttons
