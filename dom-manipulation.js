@@ -362,3 +362,9 @@ btnMouseEvent.onclick = (event) => {
 <button id="btn" onclick="console.log('clicked')"></button>;
 
 // Detecting mouse buttons
+// There is an event property "button" that indicates which mouse button was pressed. It is represented by a number:
+// 0 - the main button is pressed (usually the left button)
+// 1 - the middle or the wheel button
+// 2 - the secondary button is pressed (usually right)
+// 3 & 4 - side buttons
+btnMouseEvent.addEventListener("mouseup");
