@@ -367,4 +367,28 @@ btnMouseEvent.onclick = (event) => {
 // 1 - the middle or the wheel button
 // 2 - the secondary button is pressed (usually right)
 // 3 & 4 - side buttons
-btnMouseEvent.addEventListener("mouseup");
+btnMouseEvent.addEventListener("mouseup", (e) => {
+	let msg = document.querySelector("#message");
+	switch (e.button) {
+		case 0:
+			msg.textContent = "Left mouse clicked";
+			break;
+		case 1:
+			msg.textContent = "Middle button was clicked";
+		// and so on
+	}
+});
+
+// Modifier keys Shift, Ctrl, Alt and Meta.
+// When pressed the event object passes to the mouse event handler
+// The event object has four Boolean properties, where each is set to true if the key is held down or false if the key is not pressed
+let btnKeys = document.querySelector("#btnKeys");
+btnKeys.addEventListener("click", (e) => {
+	let keys = [];
+	if (e.shiftKey) keys.push("shift");
+	if (e.ctrlKey) keys.push("ctrl");
+	if (e.altKey) keys.push("alt");
+	if (e.metaKey) keys.push("meta");
+	let msg = document.querySelector("#messageKeys");
+	msg.textContent = `Keys: ${keys.join("+")}`;
+});
