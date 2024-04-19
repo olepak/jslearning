@@ -392,3 +392,17 @@ btnKeys.addEventListener("click", (e) => {
 	let msg = document.querySelector("#messageKeys");
 	msg.textContent = `Keys: ${keys.join("+")}`;
 });
+
+// Getting Screen Coordinates
+// The screenX and screenY properties of the event passed to the mouse event handler return the screen coordinates in relation to the entire screen
+// The clientX and clientY provide coordinates within the application client area, at which the mouse event occurred.
+// <div id="track"></div>
+// <p id="log"></p>
+let track = document.querySelector("#track");
+track.addEventListener("mousemove", (e) => {
+	let log = document.querySelector("#log");
+	log.innerText = `
+	Screen X/Y: (${e.screenX}, ${e.screenY})
+	Client X/Y: (${e.screenX}, ${e.screenY})
+	`;
+});
